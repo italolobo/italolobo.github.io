@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+</head>
+
+<body>
+
+	<div class="input-group input-group-lg">
+		<div class="input-group-prepend">
+			<span class="input-group-text" id="inputGroup-sizing-lg">Quantidade</span>
+		</div>
+		<input type="number" name="quant" id="quant" class="form-control" aria-label="Sizing example input"
+			aria-describedby="inputGroup-sizing-lg" />
+		<button id="ok" type="button" class="btn btn-secondary btn-lg btn-block">OK</button>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Número</th>
+			</tr>
+		</thead>
+
+		<tbody id="prime-list">
+		</tbody>
+	</table>
+
+</body>
+
+<script src="primos.js"></script>
+
+</html>
+

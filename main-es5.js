@@ -467,9 +467,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     InitialComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: InitialComponent,
       selectors: [["app-initial"]],
-      decls: 9,
+      decls: 10,
       vars: 0,
-      consts: [[1, "d-block", "p-2", "bg-dark", "text-white"], [1, "input-group", "mb-3"], ["id", "letterNumber", "type", "number", "placeholder", "Quantas letras tem sua palavra?", "aria-label", "Quantas letras?", "aria-describedby", "button-addon2", 1, "form-control", "d-flex", "mt-3"], ["inputValue", ""], [1, "input-group-append"], ["type", "button", "id", "button-addon2", 1, "btn", "btn-outline-secondary", "d-flex", "mt-3", 3, "click"]],
+      consts: [[1, "d-block", "p-2", "bg-dark", "text-white"], [1, "d-flex", "flex-wrap"], [1, "input-group", "mt-5"], ["id", "letterNumber", "type", "number", "placeholder", "Quantas letras tem sua palavra?", "aria-label", "Quantas letras?", "aria-describedby", "button-addon2", 1, "form-control", "d-flex", "mt-5"], ["inputValue", ""], [1, "input-group-append", "fixed-bottom", "d-flex", "flex-row", "mb-2"], ["type", "button", "id", "button-addon2", 1, "btn", "btn-outline-secondary", "flex-fill", "p-2", 3, "click"]],
       template: function InitialComponent_Template(rf, ctx) {
         if (rf & 1) {
           var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
@@ -486,21 +486,25 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "input", 2, 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "input", 3, 4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InitialComponent_Template_button_click_7_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "button", 6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function InitialComponent_Template_button_click_8_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
 
-            var _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](5);
+            var _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](6);
 
             return ctx.clickOk(_r2.value);
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, " OK ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, " OK ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1234,7 +1238,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function not() {
           this.usedLetters.push(this.popLetter);
           this.hearts.shift();
-          this.removeWord(this.popLetter);
+          this.wordsPossible = this.removeWord(this.popLetter);
+          console.log(this.wordsPossible);
           this.findNewPopLetter();
           this.isOver();
         }
@@ -1260,6 +1265,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               if (isEqual == true) {
                 arr.push(i);
               }
+
+              isEqual = true;
             }
           } catch (err) {
             _iterator6.e(err);
@@ -1267,6 +1274,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             _iterator6.f();
           }
 
+          return arr;
           console.log("arr: ", arr);
         }
       }, {

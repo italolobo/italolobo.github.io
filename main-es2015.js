@@ -522,7 +522,6 @@ clienteSelected = "TODOS";
         this.isAdmin = null;
         this.userUid = null;
         this.userAcess = [];
-  	this.productsFilter = this.filterProducts(this.documentosFilterGroup);
     }
     ngOnInit() {
         this.getListDocs();

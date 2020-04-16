@@ -513,13 +513,15 @@ function ListComponent_div_26_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r15.documentosFilterGroup);
 } }
 class ListComponent {
+clienteSelected: Observable<string> = "TODOS";
+	
     constructor(dataApi, authService) {
         this.dataApi = dataApi;
         this.authService = authService;
         this.isAdmin = null;
         this.userUid = null;
         this.userAcess = [];
-        this.clienteSelected: Observable<string> = "TODOS";
+  
     }
     ngOnInit() {
         this.getListDocs();

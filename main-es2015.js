@@ -629,10 +629,10 @@ class ListComponent {
             }
         });
         this.productsFilter = arrProducts;
-        console.log("productsFilter", this.productsFilter);
+        //console.log("productsFilter", this.productsFilter);
     }
     isSameProd(documento, produto) {
-        console.log(produto, documento.produto);
+        //console.log(produto, documento.produto);
         if (produto == documento.produto) {
             return true;
         }

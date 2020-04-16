@@ -605,17 +605,17 @@ class ListComponent {
         }
         else if (cliente == this.clienteSelected) {
             // console.log("CLIENTE igual: ", cliente, this.clienteSelected, true);
-		this.FilterDocsGroupByProduct(Doc);
+		
             return true;
         }
         else if (cliente != this.clienteSelected) {
             // console.log("CLIENTE diferente: ", cliente, this.clienteSelected, false);
-		this.FilterDocsGroupByProduct(Doc);
+		
             return false;
         }
         else {
             // console.log("CLIENTE false: ", cliente, this.clienteSelected, false);
-		this.FilterDocsGroupByProduct(Doc);
+		
             return false;
         }
 	    
@@ -634,9 +634,11 @@ class ListComponent {
     isSameProd(documento, produto) {
         //console.log(produto, documento.produto);
         if (produto == documento.produto) {
+		this.FilterDocsGroupByProduct(documento);
             return true;
         }
         else {
+		this.FilterDocsGroupByProduct(documento);
             return false;
         }
     }

@@ -570,7 +570,7 @@ class ListComponent {
 			}else {
 			   this.documentosFilterGroup = docsFiltGroup;
 			}
-		})
+		});
 		
 		this.documentosFilterGroup = DocsFilterProduct;
 		console.log("docsFilterProduct: ", this.documentosFilterGroup);

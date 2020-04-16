@@ -562,13 +562,13 @@ class ListComponent {
 		
 		docsFiltGroup.forEach(doc=>{
 			if(this.clienteSelected == "TODOS"){
-			   this.documentosFilterGroup = docsFiltGroup;
+			   DocsFilterProduct = docsFiltGroup;
 				
 			}else if(doc.cliente == this.clienteSelected){
 			   DocsFilterProduct.push(doc);
 				
 			}else {
-			   this.documentosFilterGroup = docsFiltGroup;
+			   DocsFilterProduct = docsFiltGroup;
 			}
 		});
 		

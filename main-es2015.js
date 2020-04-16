@@ -553,8 +553,33 @@ class ListComponent {
             this.documentosFilterGroup = DocsFilterGroup;
             console.log("docsFilterGroup: ", this.documentosFilterGroup);
             this.filterProducts(DocsFilterGroup);
+	    this.FilterDocsGroupByProduct(DocsFilterGroup);
         });
     }
+	
+	FilterDocsGroupByProduct(docsFiltGroup){
+		let DocsFilterProduct = [];
+		
+		docsFiltGroup.forEach(doc=>{
+			if(this.clienteSelected == "TODOS"){
+			   this.documentosFilterGroup = docsFiltGroup;
+				
+			}else if(doc.cliente == this.clienteSelected){
+			   DocsFilterProduct.push(doc);
+				
+			}else {
+			   this.documentosFilterGroup = docsFiltGroup;
+			}
+		}
+		
+		this.documentosFilterGroup = DocsFilterProduct;
+		console.log("docsFilterProduct: ", this.documentosFilterGroup);
+				      
+		this.filterProducts(DocsFilterProduct);
+		console.log("productsArr: ", this.filterProducts);
+	}
+	
+	
     getListDocs() {
         this.dataApi.getAllLDocumentos().subscribe((docs) => {
             this.documentos = docs;

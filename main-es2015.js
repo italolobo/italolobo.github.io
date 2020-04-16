@@ -513,7 +513,7 @@ function ListComponent_div_26_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r15.documentosFilterGroup);
 } }
 class ListComponent {
-clienteSelected: Observable<string> = "TODOS";
+clienteSelected: Observable<any>;
 	
     constructor(dataApi, authService) {
         this.dataApi = dataApi;

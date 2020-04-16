@@ -519,7 +519,7 @@ class ListComponent {
         this.isAdmin = null;
         this.userUid = null;
         this.userAcess = [];
-        this.clienteSelected = "TODOS";
+        this.clienteSelected: Observable<string> = "TODOS";
     }
     ngOnInit() {
         this.getListDocs();
@@ -616,13 +616,13 @@ class ListComponent {
 	
 filterDocsGroupByProduct(docsFiltGroup){
 		let DocsFilterProduct = [];
-		
-		docsFiltGroup.forEach(doc=>{
-			if(this.clienteSelected == "TODOS"){
+		this.clienteSelected.subscribe(cliente =>{
+			docsFiltGroup.forEach(doc=>{
+			if(client == "TODOS"){
 			   DocsFilterProduct = docsFiltGroup;
 			   return DocsFilterProduct;
 				
-			}else if(doc.cliente == this.clienteSelected){
+			}else if(doc.cliente == client){
 			   DocsFilterProduct.push(doc);
 				
 			}
@@ -634,6 +634,8 @@ filterDocsGroupByProduct(docsFiltGroup){
 		console.log("productsArr: ", this.filterProducts);
 	
 		return DocsFilterProduct;
+		})	
+		
 	}	
 	
 	

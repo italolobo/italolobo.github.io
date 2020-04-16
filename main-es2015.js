@@ -553,7 +553,7 @@ class ListComponent {
             this.documentosFilterGroup = DocsFilterGroup;
             console.log("docsFilterGroup: ", this.documentosFilterGroup);
             this.filterProducts(DocsFilterGroup);
-	    this.FilterDocsGroupByProduct(DocsFilterGroup);
+	    
         });
     }
 	
@@ -605,16 +605,20 @@ class ListComponent {
         }
         else if (cliente == this.clienteSelected) {
             // console.log("CLIENTE igual: ", cliente, this.clienteSelected, true);
+		this.FilterDocsGroupByProduct(Doc);
             return true;
         }
         else if (cliente != this.clienteSelected) {
             // console.log("CLIENTE diferente: ", cliente, this.clienteSelected, false);
+		this.FilterDocsGroupByProduct(Doc);
             return false;
         }
         else {
             // console.log("CLIENTE false: ", cliente, this.clienteSelected, false);
+		this.FilterDocsGroupByProduct(Doc);
             return false;
         }
+	    
     }
     filterProducts(docs) {
         let arrProducts = [];

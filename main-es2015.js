@@ -619,9 +619,9 @@ clienteSelected = "TODOS";
 	
 filterDocsGroupByProduct(docsFiltGroup){
 		let DocsFilterProduct = [];
-		this.clienteSelected.subscribe(cliente =>{
+		
 			docsFiltGroup.forEach(doc=>{
-			if(client == "TODOS"){
+			if(this.clienteSelected == "TODOS"){
 			   DocsFilterProduct = docsFiltGroup;
 			   return DocsFilterProduct;
 				
@@ -629,7 +629,7 @@ filterDocsGroupByProduct(docsFiltGroup){
 			   DocsFilterProduct.push(doc);
 				
 			}
-		});
+		);
 	
 		//this.filterProducts(DocsFilterProduct);			
 	

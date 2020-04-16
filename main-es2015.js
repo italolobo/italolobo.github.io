@@ -610,7 +610,7 @@ class ListComponent {
             }
         });
         this.productsFilter = arrProducts;
-        //console.log("productsFilter", this.productsFilter);
+        console.log("productsFilter", this.productsFilter);
     }
 	
 	

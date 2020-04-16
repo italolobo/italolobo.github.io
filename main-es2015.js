@@ -628,8 +628,7 @@ filterDocsGroupByProduct(docsFiltGroup){
 			}else if(doc.cliente == client){
 			   DocsFilterProduct.push(doc);
 				
-			}
-		);
+			}		
 	
 		//this.filterProducts(DocsFilterProduct);			
 	

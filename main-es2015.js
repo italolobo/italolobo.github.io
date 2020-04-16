@@ -620,20 +620,20 @@ filterDocsGroupByProduct(docsFiltGroup){
 		docsFiltGroup.forEach(doc=>{
 			if(this.clienteSelected == "TODOS"){
 			   DocsFilterProduct = docsFiltGroup;
+			   return DocsFilterProduct;
 				
 			}else if(doc.cliente == this.clienteSelected){
 			   DocsFilterProduct.push(doc);
 				
-			}else {
-			   DocsFilterProduct = docsFiltGroup;
 			}
 		});
 	
-		//this.filterProducts(DocsFilterProduct);
-		return DocsFilterProduct;	
+		//this.filterProducts(DocsFilterProduct);			
 	
 		console.log("docsFilterProduct: ", this.documentosFilterGroup);
 		console.log("productsArr: ", this.filterProducts);
+	
+		return DocsFilterProduct;
 	}	
 	
 	

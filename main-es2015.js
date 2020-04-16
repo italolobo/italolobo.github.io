@@ -557,28 +557,7 @@ class ListComponent {
         });
     }
 	
-	FilterDocsGroupByProduct(docsFiltGroup){
-		let DocsFilterProduct = [];
 		
-		docsFiltGroup.forEach(doc=>{
-			if(this.clienteSelected == "TODOS"){
-			   DocsFilterProduct = docsFiltGroup;
-				
-			}else if(doc.cliente == this.clienteSelected){
-			   DocsFilterProduct.push(doc);
-				
-			}else {
-			   DocsFilterProduct = docsFiltGroup;
-			}
-		});
-		
-		this.documentosFilterGroup = DocsFilterProduct;
-		console.log("docsFilterProduct: ", this.documentosFilterGroup);
-				      
-		this.filterProducts(DocsFilterProduct);
-		console.log("productsArr: ", this.filterProducts);
-	}
-	
 	
     getListDocs() {
         this.dataApi.getAllLDocumentos().subscribe((docs) => {
@@ -621,8 +600,10 @@ class ListComponent {
 	    
     }
     filterProducts(docs) {
-        let arrProducts = [];
-        docs.forEach((doc) => {
+        let arrProducts = [];	
+	let docsByProduct = this.filterDocsGroupByProduct(docs);    
+	    
+        docsByProduct.forEach((doc) => {
             // console.log("*********doc**********", doc);
             if (!arrProducts.includes(doc.produto)) {
                 arrProducts.push(doc.produto);
@@ -631,14 +612,38 @@ class ListComponent {
         this.productsFilter = arrProducts;
         //console.log("productsFilter", this.productsFilter);
     }
+	
+	
+filterDocsGroupByProduct(docsFiltGroup){
+		let DocsFilterProduct = [];
+		
+		docsFiltGroup.forEach(doc=>{
+			if(this.clienteSelected == "TODOS"){
+			   DocsFilterProduct = docsFiltGroup;
+				
+			}else if(doc.cliente == this.clienteSelected){
+			   DocsFilterProduct.push(doc);
+				
+			}else {
+			   DocsFilterProduct = docsFiltGroup;
+			}
+		});
+	
+		//this.filterProducts(DocsFilterProduct);
+		return DocsFilterProduct;	
+	
+		console.log("docsFilterProduct: ", this.documentosFilterGroup);
+		console.log("productsArr: ", this.filterProducts);
+	}	
+	
+	
+	
     isSameProd(documento, produto) {
         //console.log(produto, documento.produto);
         if (produto == documento.produto) {
-		this.FilterDocsGroupByProduct(documento);
             return true;
         }
         else {
-		this.FilterDocsGroupByProduct(documento);
             return false;
         }
     }
